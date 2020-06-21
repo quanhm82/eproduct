@@ -1,0 +1,17 @@
+server: 
+  port: 8888
+---
+spring:
+  profiles: dev,local
+  data:
+    rest:
+      base-path: api
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:h2:mem:productdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: nabtest
+    platform: org.hibernate.dialect.H2Dialect
