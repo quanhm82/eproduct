@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.GenericGenerator;
@@ -18,6 +19,7 @@ import org.hibernate.annotations.Type;
  * Product Entity as a resource
  */
 @Entity
+@Table
 public class Product {
 
 	@Id
@@ -40,6 +42,9 @@ public class Product {
 	@ManyToOne(targetEntity = Category.class)
 	@JoinColumn(name = "categoryId")
 	private Category category;
+	
+	@Column(name = "IN_STOCK")
+	private int inStock;
 
 	public String getProductName() {
 		return productName;
@@ -75,6 +80,14 @@ public class Product {
 
 	public UUID getProductId() {
 		return productId;
+	}
+
+	public int getInStock() {
+		return inStock;
+	}
+
+	public void setInStock(int inStock) {
+		this.inStock = inStock;
 	}
 	
 }
