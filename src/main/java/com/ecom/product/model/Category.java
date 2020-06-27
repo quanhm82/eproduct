@@ -30,6 +30,13 @@ public class Category {
 	
 	@Column(name = "CATEGORY_NAME")
 	private String categoryName;
+	
+	@Column(name = "CATEGORY_CODE")
+	private String categoryCode;
+	
+	public UUID getCategoryId() {
+		return categoryId;
+	}
 
 	public String getCategoryName() {
 		return categoryName;
@@ -39,8 +46,12 @@ public class Category {
 		this.categoryName = categoryName;
 	}
 
-	public UUID getCategoryId() {
-		return categoryId;
+	public String getCategoryCode() {
+		return categoryCode;
+	}
+
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
 	}
 	
 }

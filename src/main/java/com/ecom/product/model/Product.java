@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
+import org.springframework.data.rest.core.annotation.RestResource;
 
 /**
  * @author quanhoang
@@ -41,6 +42,7 @@ public class Product {
 	
 	@ManyToOne(targetEntity = Category.class)
 	@JoinColumn(name = "categoryId")
+	@RestResource(path = "categroy", rel = "category")
 	private Category category;
 	
 	@Column(name = "IN_STOCK")
