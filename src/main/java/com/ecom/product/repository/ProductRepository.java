@@ -3,10 +3,13 @@
  */
 package com.ecom.product.repository;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.data.rest.core.annotation.RestResource;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ecom.product.model.Product;
 
@@ -17,4 +20,6 @@ import com.ecom.product.model.Product;
 @RepositoryRestResource(path = "product", itemResourceRel = "product", collectionResourceRel = "products")
 public interface ProductRepository extends PagingAndSortingRepository<Product, UUID> {
 
+	@RestResource(path = "search/byNameOrDescription")
+	List<Product> findByProductNameLikeOrDescriptionLike(@RequestParam String nameLike, @RequestParam String descLike);
 }

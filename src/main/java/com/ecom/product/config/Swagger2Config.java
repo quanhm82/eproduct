@@ -22,7 +22,7 @@ public class Swagger2Config {
 	
 	@Bean
 	public Docket orderApi() {
-		return new Docket(DocumentationType.SWAGGER_2).groupName("Order")
+		return new Docket(DocumentationType.SWAGGER_2).groupName("Product")
 		        .select() 
 		        .apis(RequestHandlerSelectors.any()) 
 		        .paths(PathSelectors.ant("/api/**").and(PathSelectors.ant("/api/profile/**").negate()))
