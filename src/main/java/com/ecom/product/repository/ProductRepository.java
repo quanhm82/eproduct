@@ -22,4 +22,10 @@ public interface ProductRepository extends PagingAndSortingRepository<Product, U
 
 	@RestResource(path = "search/byNameOrDescription")
 	List<Product> findByProductNameLikeOrDescriptionLike(@RequestParam String nameLike, @RequestParam String descLike);
+	
+	@RestResource(path = "search/priceBetween")
+	List<Product> findByPriceBetween(@RequestParam double start, @RequestParam double end);
+	
+	@RestResource(path = "search/stockGreaterThan")
+	List<Product> findByInStockGreaterThanEqual( @RequestParam int stock);
 }
