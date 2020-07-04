@@ -13,7 +13,7 @@ Starting eOrder instance with "dev" profile with initialization of sample data.
 ```sh
 $ cd target
 ...
-$ java -jar eorder-{version}.jar -Dspring.profile.active=dev
+$ java -jar ecom-product-{version}.jar -Dspring.profile.active=dev
 ```
 Access eDiscovery by http://localhost:8888/swagger-ui.html
 
